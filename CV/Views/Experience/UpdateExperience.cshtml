@@ -1,0 +1,28 @@
+﻿@model CV.Models.Entity.Experiences
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Deneyim Güncelleme Sayfası</h2>
+
+<div class="container">
+    <form method="post">
+        @Html.Label("Deneyim ID")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @disabled = "disabled" })
+        <br />
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        @Html.Label("Alt Başlık")
+        @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+        <br />
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        @Html.Label("Açıklama")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+</div>

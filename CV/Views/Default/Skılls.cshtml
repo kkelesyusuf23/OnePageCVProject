@@ -1,0 +1,21 @@
+﻿@model List<CV.Models.Entity.Skills>
+@{
+    Layout = null;
+}
+
+<!-- Skills-->
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                    @item.Skill
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+<hr class="m-0" />

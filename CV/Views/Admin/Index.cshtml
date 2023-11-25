@@ -1,0 +1,30 @@
+﻿@model List<CV.Models.Entity.Login>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Admin İşlemleri</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Username</td>
+            <td><a href="/Admin/DeleteAdmin/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateAdmin/@item.ID" class="btn btn-outline-success">Güncelle</a></td>
+            <td></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/AddAdmin/" class="btn btn-outline-primary">Yeni Kullanıcı Ekle</a>

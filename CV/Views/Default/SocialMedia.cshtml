@@ -1,0 +1,9 @@
+﻿@model List<CV.Models.Entity.SocialMedia>
+
+<div class="social-icons">
+    @foreach (var item in Model)
+    {
+        <a class="social-icon" href="@item.Link"><i class="@item.Icon"></i></a>
+    }
+
+</div>

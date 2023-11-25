@@ -1,0 +1,23 @@
+﻿@model CV.Models.Entity.Certificates
+@{
+    ViewBag.Title = "UpdateCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sertifika güncellee sayfası</h2>
+
+<div class="container">
+    <form method="post">
+        @Html.Label("Sertifika ID")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @disabled = "disabled" })
+        <br />
+        @Html.Label("Sertifika Tarihi")
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        @Html.Label("Açıklama")
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+        <a href="/Certificate/DeleteCertificate/@ViewBag.d" class="btn btn-danger">Sil</a>
+    </form>
+</div>

@@ -1,0 +1,82 @@
+﻿@model List<CV.Models.Entity.SocialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <br />
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Yeni Sosyal Medya Ekle</button>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Sosyal Media</th>
+                                            <th>Durum</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.SocialMediaName</td>
+                                                <td>@item.Statu</td>
+                                                <td><a href="/SocialMedia/DeleteSocialMedia/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/SocialMedia/UpdateSocialMedia/@item.ID" class="btn btn-outline-success">Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Sosyal Medya Ekleme Paneli</h2>
+                    </div>
+                    <form method="post" action="/SocialMedia/AddSocialMedia/">
+                        <div class="modal-body">
+                            <label>Sosyal Media İsmi</label>
+                            <input type="text" name="SocialMediaName" class="form-control" />
+                            <br />
+                            <label>Sosyal Media Linki</label>
+                            <input type="text" name="Link" class="form-control" />
+                            <br />
+                            <label>Sosyal Media İconu</label>
+                            <input type="text" name="Icon" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

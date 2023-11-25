@@ -1,0 +1,22 @@
+﻿@model CV.Models.Entity.Login
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateAdmin</h2>
+
+<div class="container">
+    <form method="post">
+        @Html.Label("Kullanıcı ID")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @disabled = "disabled" })
+        <br />
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+        <br />
+        @Html.Label("Password")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+</div>

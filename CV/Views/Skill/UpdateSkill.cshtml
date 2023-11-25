@@ -1,0 +1,22 @@
+﻿@model CV.Models.Entity.Skills
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateSkill</h2>
+
+<div class="container">
+    <form method="post">
+        @Html.Label("Yetenek ID")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @disabled = "disabled" })
+        <br />
+        @Html.Label("Yetenek")
+        @Html.TextBoxFor(x => x.Skill, new { @class = "form-control" })
+        <br />
+        @Html.Label("Oran")
+        @Html.TextBoxFor(x => x.Progress, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+</div>

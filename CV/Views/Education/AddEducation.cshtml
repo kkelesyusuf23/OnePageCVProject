@@ -1,0 +1,30 @@
+﻿@model CV.Models.Entity.Educations
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddEducation</h2>
+
+<div class="container">
+    <form method="post">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title, "", new { style = "color:red" })
+        <br />
+        @Html.Label("Alt Başlık1")
+        @Html.TextBoxFor(x => x.SubTitle1, new { @class = "form-control" })
+        <br />
+        @Html.Label("Alt Başlık2")
+        @Html.TextBoxFor(x => x.SubTitle2, new { @class = "form-control" })
+        <br />
+        @Html.Label("GNO")
+        @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.GNO, "", new { style = "color:blue" })
+        <br />
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>

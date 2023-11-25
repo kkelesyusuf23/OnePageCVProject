@@ -1,0 +1,32 @@
+﻿@model List<CV.Models.Entity.Experiences>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Deneyim Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.SubTitle</td>
+            <td>@item.Date</td>
+            <td><a href="/Experience/DeleteExperience/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-outline-success">Güncelle</a></td>
+            <td></td>
+        </tr>
+    }
+</table>
+<a href="/Experience/AddExperience/" class="btn btn-outline-primary">Yeni Deneyim Ekle</a>
